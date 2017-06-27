@@ -115,13 +115,13 @@ function agregar_categorias ($categorias)
 	   $color = '#'+ $red.toString(16) + $green.toString(16) + $blue.toString(16);
 		 if ($i==0)
 		  {
-		$cadena = "<a href='#busqueda' id='cat0' class='btn-opciones ui-btn ui-corner-all ui-icon-alert ui-btn-icon-right  ui-first-child' style='background-color:" + $color+ "'>HTML</a>";	  
+		$cadena = "<a href='#html' id='cat0' class='btn-opciones ui-btn ui-corner-all ui-icon-alert ui-btn-icon-right  ui-first-child' style='background-color:" + $color+ "'>html</a>";	  
 		  }
 		
 		 if ($i> 0 && $i < $categorias)
 		  {
 		  
-		 $cadena += "<a href='#busqueda' id='cat"+ $i +"' class='btn-opciones ui-btn ui-corner-all ui-icon-star ui-btn-icon-right' style='background-color:" + $color +"'>"+ ($todas_categorias[$i-1]) +"</a>"
+		 $cadena += "<a href='#"+ ($todas_categorias[$i-1]) +"' id='cat"+ $i +"' class='btn-opciones ui-btn ui-corner-all ui-icon-star ui-btn-icon-right' style='background-color:" + $color +"'>"+ ($todas_categorias[$i-1]) +"</a>"
 		  }
 		 if ($red == 255 && $blue == 35 && $green <= 255)
 		  {
@@ -153,6 +153,7 @@ function agregar_categorias ($categorias)
 		  }          
 	 }
 	 
+	$cadena += "<a href='#form' id='cat"+ ($i-1) +"' class='btn-opciones ui-btn ui-corner-all ui-icon-star ui-btn-icon-right ui-last-child' style='background-color:" + $color +"'>form</a>"
 	$('#opciones div.ui-controlgroup-controls').append($cadena); 
  }
  
