@@ -21,7 +21,9 @@
    <preference name="orientation"        value="portrait" />    
    <preference name="target-device"       value="universal" />   
    <preference name="fullscreen"         value="true" />      
-   <preference name="android-installLocation"  value="auto" />  
+   <preference name="android-installLocation"  value="auto" />
+   <preference name="SplashScreen" value="splash"/>
+   <preference name="SplashScreenDelay" value="1000"/>
 
 
    <!-- Plugins -->  
@@ -31,7 +33,7 @@
    <!-- Third party plugins -->  
    
    <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->  
-   <plugin name="cordova-plugin-nativeaudio" source="npm" />
+
    <plugin name ="cordova-plugin-whitelist" source="npm"/>
    <plugin spec="https://github.com/an-rahulpandey/cordova-plugin-dbcopy.git" />
    <plugin spec="https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free.git" />

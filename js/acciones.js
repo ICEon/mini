@@ -41,27 +41,8 @@ function onDeviceReady() {
    });
    
    
-  if( window.plugins && window.plugins.NativeAudio ) {
-    
-    // Preload audio resources 
-    
-    
-    window.plugins.NativeAudio.preloadSimple( 'note', 'audio/G.mp3', function(msg){
-    }, function(msg){
-        alert ( 'error: ' + msg );
-    });
- 
- 
-    // Play 
-	$('#tocar').on('tap', function (){
 
 
-    window.plugins.NativeAudio.play( 'note' );
-	
-	});
-	
-	
-}
 }
 
 
