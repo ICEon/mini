@@ -1,6 +1,6 @@
 // JavaScript Document
 var db = null;
-var $todas_categorias = ["<header>","<body>","<form>"];
+var $todas_categorias = ["header","body","form"];
 
 $(document).ready(function(e) {
 
@@ -153,7 +153,6 @@ function agregar_categorias ($categorias)
 		  }          
 	 }
 	 
-	$cadena += "<a href='#busqueda' id='cat"+ ($i-1) +"' class='btn-opciones ui-btn ui-corner-all ui-icon-star ui-btn-icon-right ui-last-child' style='background-color:" + $color +"'>tu'un</a>"
 	$('#opciones div.ui-controlgroup-controls').append($cadena); 
  }
  
