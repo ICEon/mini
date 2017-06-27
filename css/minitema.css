@@ -18,3 +18,40 @@
 
 .titulo {
 }
+
+section {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.significado {
+	font-weight: bold;
+	font-size: 2.5em;
+}
+.significado:first-letter {
+	color:#FF9E00;
+}
+.contenido {
+	text-align:center;
+}
+
+.contenido h1 {
+	font-size:2em;
+}
+
+.mediano,
+.contenido p {
+	font-size:1.5em;
+}
+
+.ajustado {
+	text-align: left;
+	display: inline-block;
+}
+.resaltar {
+	color:#FF9E00;
+}
+
+.grande {
+	font-size: 2.5em;
+}
