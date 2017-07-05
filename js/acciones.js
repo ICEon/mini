@@ -13,6 +13,7 @@ $(document).ready(function(e) {
 	$(document).on("pagebeforeshow","#quiz",function(event){
  
 	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {
+		  
 		       obtener_preguntas ();
 			   colocar_pregunta(cual);
                
@@ -65,6 +66,7 @@ $(document).ready(function(e) {
   }	 
   
   function colocar_pregunta (numero) {
-      $('#pregunta').html (preguntas.rows.item(numero).pregunta);
+	  alert ( numero);
+      $('#pregunta').html (preguntas.rows.item(0).pregunta);
   }
 });
