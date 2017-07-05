@@ -1,7 +1,6 @@
 var db = null;
 var preguntas = null;	
 var cualp = 0;
-var textop ="";
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
@@ -13,14 +12,15 @@ $(document).ready(function(e) {
 	
 	$(document).on("pagebeforeshow","#quiz",function(event){
       obtener_preguntas ();	  
-
-textop = "" + preguntas.rows.item(0).pregunta;
-alert (textop);
-//$('#divpregunta').html(textop);
-
+	  if (confirm('Vas a comenzar un quiz, una vez iniciado deberas terminar, si no empezarás de nuevo')) {
+$('#divpregunta').html("Hola");
+} else {
+  alert ('Puedes repasar los temas antes de comenzar');
+}
 	});
     $('#btncontinuar').on('click', function (){
-
+		cualp = cualp + 1;
+		alert (preguntas.rows.item(cualp).pregunta);
 	});
 	} //device ready
 	
@@ -48,7 +48,7 @@ alert (textop);
       {
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
-//		   alert (rs.rows.item(0).pregunta);
+		   alert (rs.rows.item(0).pregunta);
 preguntas = rs;	   
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
