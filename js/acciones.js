@@ -15,7 +15,7 @@ $(document).ready(function(e) {
 obtener_preguntas ();
 
 	  		       
-$('#divpregunta').html(preguntas.rows.item(0).pregunta);
+//$('#divpregunta').html(preguntas.rows.item(0).pregunta);
  alert (preguntas.rows.item(0).pregunta);
 
 
@@ -52,7 +52,6 @@ $('#divpregunta').html(preguntas.rows.item(0).pregunta);
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
        preguntas = rs;
-	    alert (rs.rows.item(0).pregunta);
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
 	  db.close();
