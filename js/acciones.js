@@ -31,7 +31,7 @@ $(document).ready(function(e) {
 	
 	
     $('#btncontinuar').on('click', function (){
-		alert ("correcta: " + correcta + " respuesta: " + $("input:radio[name='respuestas']:checked").val());
+
 		
 		if (correcta ==  $("input:radio[name='respuestas']:checked").val())
 		 {
@@ -39,7 +39,7 @@ $(document).ready(function(e) {
 		 }
 		 
 		cualp = cualp + 1;
-		if (cualp < 2)
+		if (cualp < 10)
 		 {
 		colocar_pregunta(cualp);
 		 }
@@ -74,7 +74,7 @@ $(document).ready(function(e) {
 		  cualp = 0;
 		  puntaje = 0;
 	   db.transaction(function(tx) {
-       tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 2', [], function(tx, rs) {
+       tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 10', [], function(tx, rs) {
 //		   alert (rs.rows.item(0).pregunta);
 preguntas = rs;	   
     }, function(tx, error) {
