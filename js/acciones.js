@@ -10,8 +10,16 @@ $(document).ready(function(e) {
 	dbcopy();
 	
 	$(document).on("pagebeforeshow","#quiz",function(event){
-      obtener_preguntas ();	  
+ 
+	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {
+		       obtener_preguntas ();
+               
+} else {
+    alert('Puedes repasar las temas antes de iniciar un Quiz');
+	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#principal", { role: "dialog" } );
+}
 	});
+	
     $('#btncontinuar').on('click', function (){
 		alert (preguntas.rows.item(0).pregunta);
 	});
@@ -41,8 +49,7 @@ $(document).ready(function(e) {
       {
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
-		   alert (rs.rows.item(0).pregunta);
-preguntas = rs;	   
+       preguntas = rs;	   
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
 	  db.close();
