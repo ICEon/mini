@@ -40,7 +40,7 @@ $(document).ready(function(e) {
      function obtener_preguntas ()
       {
 	   db.transaction(function(tx) {
-       tx.executeSql('SELECT * FROM preguntas ORDER BY RAND() LIMIT 15', [], function(tx, rs) {
+       tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
 		   alert (rs.rows.item(0).pregunta);
 preguntas = rs;	   
     }, function(tx, error) {
