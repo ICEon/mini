@@ -11,10 +11,11 @@ $(document).ready(function(e) {
 	dbcopy();
 	
 	$(document).on("pagebeforeshow","#quiz",function(event){
-		       obtener_preguntas ();
-			   colocar_pregunta(cual); 
-	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {		  
 
+
+	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {		  
+	  		       obtener_preguntas ();
+$('#pregunta').html (preguntas.rows.item(0).pregunta);
 
 } else {
     alert('Puedes repasar las temas antes de iniciar un Quiz');
@@ -65,8 +66,7 @@ $(document).ready(function(e) {
   }	 
   
   function colocar_pregunta (numero) {
-	  alert (preguntas.rows.item(0).pregunta);
-//      $('#pregunta').html (preguntas.rows.item(0).pregunta);
+$('#pregunta').html (preguntas.rows.item(numero).pregunta);
 
   }
 });
