@@ -1,3 +1,4 @@
+var db = null;
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
