@@ -31,9 +31,9 @@ $(document).ready(function(e) {
 	
 	
     $('#btncontinuar').on('click', function (){
-		alert ("correcta: " + correcta + " respuesta: " + $('#respuestas').val());
+		alert ("correcta: " + correcta + " respuesta: " + $("input:radio[name='respuestas']:checked").val());
 		
-		if (correcta ==  $('#respuestas').val())
+		if (correcta ==  $("input:radio[name='respuestas']:checked").val())
 		 {
 			 puntaje = puntaje + 1;
 		 }
