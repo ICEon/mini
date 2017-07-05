@@ -13,14 +13,12 @@ $(document).ready(function(e) {
 	$(document).on("pagebeforeshow","#quiz",function(event){
 
 obtener_preguntas ();
-	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {		  
+
 	  		       
-//$('#divpregunta').html(preguntas.rows.item(0).pregunta);
+$('#divpregunta').html(preguntas.rows.item(0).pregunta);
  alert (preguntas.rows.item(0).pregunta);
-} else {
-    alert('Puedes repasar las temas antes de iniciar un Quiz');
-	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#principal" );
-}
+
+
 	});
 	
     $('#btncontinuar').on('click', function (){
