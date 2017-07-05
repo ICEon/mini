@@ -48,10 +48,11 @@ $('#divpregunta').html(preguntas.rows.item(0).pregunta);
  	  }
      function obtener_preguntas ()
       {
+		  cual = 0;
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
-       preguntas = rs;	   
-	   cual = 0;
+       preguntas = rs;
+	    alert (rs.rows.item(0).pregunta);
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
 	  db.close();
