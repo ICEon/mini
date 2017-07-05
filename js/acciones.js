@@ -20,7 +20,7 @@ $(document).ready(function(e) {
 	   $('#tr2').html (preguntas.rows.item(cualp).r2);
 	   $('#tr3').html (preguntas.rows.item(cualp).r3);
 	   $('#tr4').html (preguntas.rows.item(cualp).r4);
-	   correcta = preguntas.rows.item(cualp).c;
+	   correcta = preguntas.rows.item(cualp).correcta;
 	   $( ":mobile-pagecontainer" ).pagecontainer( "change", "#quiz");
       } else {
      alert ('Puedes repasar los temas antes de comenzar');
@@ -95,7 +95,7 @@ preguntas = rs;
 	   $('#tr2').html (preguntas.rows.item(c).r2);
 	   $('#tr3').html (preguntas.rows.item(c).r3);
 	   $('#tr4').html (preguntas.rows.item(c).r4);
-	   correcta = preguntas.rows.item(c).c;   
+	   correcta = preguntas.rows.item(c).correcta;   
    }
    
 
