@@ -23,6 +23,7 @@ preguntas;
 	 function copysuccess()
 	  {
        db = window.sqlitePlugin.openDatabase({name: 'mini.db', location: 'default', androidDatabaseImplementation: 2});
+	   alert ("copiada");
  	 //  obtener_categorias();
 	  }
 
@@ -38,6 +39,7 @@ preguntas;
       {
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RAND() LIMIT 15', [], function(tx, rs) {
+		   alert (rs.rows.item(0).pregunta);
 preguntas = rs;	   
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
