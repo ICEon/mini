@@ -1,6 +1,7 @@
 var db = null;
 var preguntas = null;	
 var cualp = 0;
+var textop ="";
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
@@ -13,14 +14,14 @@ $(document).ready(function(e) {
 	$(document).on("pagebeforeshow","#quiz",function(event){
       obtener_preguntas ();	  
 	  if (confirm('Vas a comenzar un quiz, una vez iniciado deberas terminar, si no empezarás de nuevo')) {
-$('#divpregunta').html(preguntas.rows.item(0).pregunta);
+textop = "" + preguntas.rows.item(0).pregunta;
+//$('#divpregunta').html(textop);
 } else {
   alert ('Puedes repasar los temas antes de comenzar');
 }
 	});
     $('#btncontinuar').on('click', function (){
-cual = cual +1;
-$('#divpregunta').html(preguntas.rows.item(cual).pregunta);
+
 	});
 	} //device ready
 	
