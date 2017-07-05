@@ -1,9 +1,10 @@
 var db = null;
+var preguntas = null;	
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
 	});*/
-preguntas;	
+
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 	dbcopy();
