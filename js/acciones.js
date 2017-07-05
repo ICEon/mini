@@ -1,6 +1,7 @@
 var db = null;
+
 var preguntas = null;	
-var cual = 0;
+
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
@@ -48,7 +49,7 @@ obtener_preguntas ();
  	  }
      function obtener_preguntas ()
       {
-		  cual = 0;
+
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
        preguntas = rs;
