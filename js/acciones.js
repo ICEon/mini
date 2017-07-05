@@ -1,7 +1,5 @@
 var db = null;
-
 var preguntas = null;	
-
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
@@ -12,18 +10,10 @@ $(document).ready(function(e) {
 	dbcopy();
 	
 	$(document).on("pagebeforeshow","#quiz",function(event){
-
-obtener_preguntas ();
-
-	  		       
-//$('#divpregunta').html(preguntas.rows.item(0).pregunta);
- alert (preguntas.rows.item(0).pregunta);
-
-
+      obtener_preguntas ();	  
 	});
-	
     $('#btncontinuar').on('click', function (){
-		colocar_pregunta(cual);
+		alert (preguntas.rows.item(0).pregunta);
 	});
 	} //device ready
 	
@@ -49,10 +39,10 @@ obtener_preguntas ();
  	  }
      function obtener_preguntas ()
       {
-
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
-       preguntas = rs;
+		   alert (rs.rows.item(0).pregunta);
+preguntas = rs;	   
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
 	  db.close();
@@ -61,11 +51,9 @@ obtener_preguntas ();
   });
     });
 	
-  });  
-  }	 
+  });
   
-  function colocar_pregunta (numero) {
-//$('#divpregunta').html (preguntas.rows.item(numero).pregunta);
-
-  }
+  
+  
+  }	  
 });
