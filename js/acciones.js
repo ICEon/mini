@@ -13,12 +13,11 @@ $(document).ready(function(e) {
 	
 	$(document).on("pagebeforeshow","#quiz",function(event){
       obtener_preguntas ();	  
-	  if (confirm('Vas a comenzar un quiz, una vez iniciado deberas terminar, si no empezarás de nuevo')) {
+
 textop = "" + preguntas.rows.item(0).pregunta;
+alert (textop);
 //$('#divpregunta').html(textop);
-} else {
-  alert ('Puedes repasar los temas antes de comenzar');
-}
+
 	});
     $('#btncontinuar').on('click', function (){
 
@@ -49,7 +48,7 @@ textop = "" + preguntas.rows.item(0).pregunta;
       {
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
-		   alert (rs.rows.item(0).pregunta);
+//		   alert (rs.rows.item(0).pregunta);
 preguntas = rs;	   
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
