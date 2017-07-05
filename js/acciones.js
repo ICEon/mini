@@ -11,12 +11,11 @@ $(document).ready(function(e) {
 	dbcopy();
 	
 	$(document).on("pagebeforeshow","#quiz",function(event){
- 
-	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {
-		  
 		       obtener_preguntas ();
-			   colocar_pregunta(cual);
-               
+			   colocar_pregunta(cual); 
+	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {		  
+
+
 } else {
     alert('Puedes repasar las temas antes de iniciar un Quiz');
 	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#principal" );
