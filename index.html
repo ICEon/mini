@@ -7,7 +7,9 @@
     <title>Mi aplicacion</title>
     
     <!--grupo CSS-->
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" type="text/css" href="themes/themeblack.min.css">
+<link rel="stylesheet" type="text/css" href="themes/jquery.mobile.icons.min.css">
+<link rel="stylesheet" type="text/css" href="themes/jquery.mobile.structure-1.4.5.min.css">
     <link rel="stylesheet" href="css/minitema.css">
     
     <!--grupo JavaScript-->
@@ -34,7 +36,7 @@
         <div id="opciones" >
 
           <div  data-role="controlgroup" style="margin:0 auto;" class="div-botones">
-          
+          <a href="#quiz" class="ui-btn ui-btn-corner-all" id="btnquiz">Quiz</a>
           </div>
         </div>
 
@@ -196,5 +198,40 @@
       </div>      
     </div>
     <!--form-->
+    <!--quiz-->
+    <div data-role="page" id="quiz">
+          <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1 class="titulo">Quiz</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+       <div id="pregunta">
+       Son tipos de selectores para generar reglas de estilo (css)
+       </div>
+       <div id="imagenpregunta">
+       </div>
+       <div id="respuestas">
+         <input type="radio" name="respuestas" id="r1" value="1"> 
+         <label for="r1" id="tr1">Universal, Id, Clase</label>
+         <input type="radio" name="respuestas" id="r2" value="2"> 
+         <label for="r2" id="tr2">Variable, Fijo</label>
+         <input type="radio" name="respuestas" id="r3" value="3"> 
+         <label for="r3" id="tr3">General, Particular</label>
+         <input type="radio" name="respuestas" id="r4" value="4"> 
+         <label for="r4" id="tr4">Local, Global</label> 
+       </div>
+       <div>
+         <a href="" class="ui-btn ui-btn-corner-all" id="btncontinuar">Continuar</a>
+       </div>
+      </div>    
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="bottom">
+          <ul>
+            <li><a href="#principal" data-icon="home">principal</a></li>
+            <li><a href="#" data-icon="info" id="a-quiz">ayuda</a></li>
+          </ul>
+        </div>
+      </div>      
+    </div>
+    <!--quiz-->
   </body>
 </html>
