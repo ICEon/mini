@@ -66,7 +66,8 @@ $(document).ready(function(e) {
   }	 
   
   function colocar_pregunta (numero) {
-	  alert ( numero);
-      $('#pregunta').html (preguntas.rows.item(0).pregunta);
+	  alert (preguntas.rows.item(0).pregunta);
+//      $('#pregunta').html (preguntas.rows.item(0).pregunta);
+
   }
 });
