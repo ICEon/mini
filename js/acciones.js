@@ -13,13 +13,14 @@ $(document).ready(function(e) {
 	$(document).on("pagebeforeshow","#quiz",function(event){
       obtener_preguntas ();	  
 	  if (confirm('Vas a comenzar un quiz, una vez iniciado deberas terminar, si no empezarás de nuevo')) {
-$('#divpregunta').html("Hola");
+$('#divpregunta').html(preguntas.rows.item(0).pregunta);
 } else {
   alert ('Puedes repasar los temas antes de comenzar');
 }
 	});
     $('#btncontinuar').on('click', function (){
-		alert (preguntas.rows.item(0).pregunta);
+cual = cual +1;
+$('#divpregunta').html(preguntas.rows.item(cual).pregunta);
 	});
 	} //device ready
 	
