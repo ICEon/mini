@@ -15,8 +15,8 @@ $(document).ready(function(e) {
 
 	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {		  
 	  		       obtener_preguntas ();
-$('#pregunta').html (preguntas.rows.item(0).pregunta);
-
+//$('#divpregunta').html(preguntas.rows.item(0).pregunta);
+ alert (preguntas.rows.item(0).pregunta);
 } else {
     alert('Puedes repasar las temas antes de iniciar un Quiz');
 	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#principal" );
@@ -66,7 +66,7 @@ $('#pregunta').html (preguntas.rows.item(0).pregunta);
   }	 
   
   function colocar_pregunta (numero) {
-$('#pregunta').html (preguntas.rows.item(numero).pregunta);
+//$('#divpregunta').html (preguntas.rows.item(numero).pregunta);
 
   }
 });
