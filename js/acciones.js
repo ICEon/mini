@@ -10,14 +10,19 @@ $(document).ready(function(e) {
 	function onDeviceReady() {
 	dbcopy();
 	
-	$(document).on("pagebeforeshow","#quiz",function(event){
-      obtener_preguntas ();	  
+	$('#btnquiz').on('click', function (){
 	  if (confirm('Vas a comenzar un quiz, una vez iniciado deberas terminar, si no empezarás de nuevo')) {
-$('#divpregunta').html("Hola");
-} else {
-  alert ('Puedes repasar los temas antes de comenzar');
-}
+	   obtener_preguntas ();	  
+       $('#divpregunta').html(preguntas.rows.item(cualp).pregunta);
+	   $( ":mobile-pagecontainer" ).pagecontainer( "change", "#quiz");
+      } else {
+     alert ('Puedes repasar los temas antes de comenzar');
+     }	
 	});
+	
+
+	
+	
     $('#btncontinuar').on('click', function (){
 		cualp = cualp + 1;
 		alert (preguntas.rows.item(cualp).pregunta);
@@ -46,6 +51,7 @@ $('#divpregunta').html("Hola");
  	  }
      function obtener_preguntas ()
       {
+		  cualp = 0;
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
 		   alert (rs.rows.item(0).pregunta);
