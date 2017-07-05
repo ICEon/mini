@@ -1,6 +1,7 @@
 var db = null;
 var preguntas = null;	
 var cualp = 0;
+var correcta = 0;
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
@@ -14,6 +15,11 @@ $(document).ready(function(e) {
 	  if (confirm('Vas a comenzar un quiz, una vez iniciado deberas terminar, si no empezarás de nuevo')) {
 	   obtener_preguntas ();	  
        $('#divpregunta').html(preguntas.rows.item(cualp).pregunta);
+	   $('#tr1').html (preguntas.rows.item(cualp).r1);
+	   $('#tr2').html (preguntas.rows.item(cualp).r2);
+	   $('#tr3').html (preguntas.rows.item(cualp).r3);
+	   $('#tr4').html (preguntas.rows.item(cualp).r4);
+	   correcta = preguntas.rows.item(cualp).c;
 	   $( ":mobile-pagecontainer" ).pagecontainer( "change", "#quiz");
       } else {
      alert ('Puedes repasar los temas antes de comenzar');
@@ -24,8 +30,10 @@ $(document).ready(function(e) {
 	
 	
     $('#btncontinuar').on('click', function (){
+//		evaluar();
 		cualp = cualp + 1;
-		alert (preguntas.rows.item(cualp).pregunta);
+		colocar_pregunta(cualp);
+
 	});
 	} //device ready
 	
@@ -69,4 +77,13 @@ preguntas = rs;
   
   
   }	  
+  function colocar_pregunta (c)
+   {
+	   $('#divpregunta').html(preguntas.rows.item(c).pregunta);
+	   $('#tr1').html (preguntas.rows.item(c).r1);
+	   $('#tr2').html (preguntas.rows.item(c).r2);
+	   $('#tr3').html (preguntas.rows.item(c).r3);
+	   $('#tr4').html (preguntas.rows.item(c).r4);
+	   correcta = preguntas.rows.item(c).c;   
+   }
 });
