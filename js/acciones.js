@@ -100,5 +100,17 @@ preguntas = rs;
 	   correcta = preguntas.rows.item(c).correcta;   
    }
    
+   $('#salir').on('tap', function (){
+	   if (navigator.app) {
+        navigator.app.exitApp();
+        }
+	   else if (navigator.device)
+	    {
+         navigator.device.exitApp();
+        }
+	   else {
+    window.close();
+        }
+   });
 
 });
