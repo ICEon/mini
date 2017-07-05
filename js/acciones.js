@@ -1,5 +1,6 @@
 var db = null;
 var preguntas = null;	
+var cual = 0;
 $(document).ready(function(e) {
 /*	$('label').on('click', function (){
 		alert ($(this).attr('id'));
@@ -13,15 +14,16 @@ $(document).ready(function(e) {
  
 	  if (confirm('Vas a iniciar un Quiz de HTML, una vez comenzado tendras que terniarlo, si sales comenzaras de nuevo')) {
 		       obtener_preguntas ();
+			   colocar_pregunta(cual);
                
 } else {
     alert('Puedes repasar las temas antes de iniciar un Quiz');
-	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#principal", { role: "dialog" } );
+	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#principal" );
 }
 	});
 	
     $('#btncontinuar').on('click', function (){
-		alert (preguntas.rows.item(0).pregunta);
+		colocar_pregunta(cual);
 	});
 	} //device ready
 	
@@ -50,6 +52,7 @@ $(document).ready(function(e) {
 	   db.transaction(function(tx) {
        tx.executeSql('SELECT * FROM preguntas ORDER BY RANDOM() LIMIT 15', [], function(tx, rs) {
        preguntas = rs;	   
+	   cual = 0;
     }, function(tx, error) {
       alert ('SELECT error: ' + error.message);
 	  db.close();
@@ -58,9 +61,10 @@ $(document).ready(function(e) {
   });
     });
 	
-  });
+  });  
+  }	 
   
-  
-  
-  }	  
+  function colocar_pregunta (numero) {
+      $('#pregunta').html (preguntas.rows.item(numero).pregunta);
+  }
 });
